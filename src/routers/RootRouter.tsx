@@ -1,7 +1,6 @@
-import React from 'react'
+import Layout from '@layout/Layout'
+import MainPage from '@pages/MainPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Layout from '../layout/Layout'
-import MainPage from '../pages/MainPage'
 
 const RootRouter = () => {
   return (
