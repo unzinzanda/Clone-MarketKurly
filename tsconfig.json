@@ -18,7 +18,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react", // /** @jsx jsx */ pragma를 매번 안 쓰기 위함
+    "types": ["@emotion/react/types/css-prop"]
   },
   "include": [
     "src"
