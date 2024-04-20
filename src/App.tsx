@@ -1,7 +1,7 @@
 import { Global } from '@emotion/react'
 import React from 'react'
-import RootRouter from '@routers/RootRouter'
-import { global } from '@styles/global'
+import { global } from './styles/global'
+import RootRouter from './routers/RootRouter'
 
 function App() {
   return (
