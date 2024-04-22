@@ -7,6 +7,10 @@ export const container = css`
   align-items: center;
   justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 4px 0px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 5;
 `
 
 export const header = css`
