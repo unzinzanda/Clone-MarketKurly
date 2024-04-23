@@ -1,6 +1,39 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
-import * as css from '../../styles/common/Carousel.style'
 import { images } from '../../constants/images'
+import { css } from '@emotion/react'
+
+interface arrowButtonProps {
+  dir: string
+}
+
+const arrowButton = (props: arrowButtonProps) => css`
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: ${props.dir === 'left' ? '100px' : ''};
+  right: ${props.dir === 'right' ? '100px' : ''};
+  transform: translate(0, -50%);
+
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+
+  opacity: 0;
+
+  transition: opacity 0.5s ease;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+
+  :hover {
+    opacity: 1;
+  }
+`
 
 const Carousel = () => {
   const banners = [
@@ -35,7 +68,7 @@ const Carousel = () => {
       if (carouselRef.current !== null) {
         carouselRef.current.style.transition = ''
       }
-    }, 500)
+    }, 1000)
   }
 
   const handleSwipe = (dir: number) => {
@@ -83,17 +116,46 @@ const Carousel = () => {
   }, [curIndex])
 
   return (
-    <div css={css.container}>
-      <div css={css.carousel} ref={carouselRef}>
+    <div
+      css={css`
+        width: 100%;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        :hover {
+          button {
+            opacity: 1;
+          }
+        }
+      `}
+    >
+      <div
+        css={css`
+          height: 370px;
+          display: flex;
+        `}
+        ref={carouselRef}
+      >
         {curBanners.map((str, index) => (
-          <div css={css.imageBox} key={str + index}>
-            <img css={css.image} src={str} />
+          <div
+            css={css`
+              width: 100vw;
+            `}
+            key={str + index}
+          >
+            <img
+              css={css`
+                width: 100vw;
+                height: 370px;
+              `}
+              src={str}
+            />
           </div>
         ))}
       </div>
       <button
         type="button"
-        css={css.arrowButton({ dir: 'left' })}
+        css={arrowButton({ dir: 'left' })}
         onClick={() => {
           const debouncedHandler = debounce<typeof handleSwipe>(
             handleSwipe,
@@ -106,7 +168,7 @@ const Carousel = () => {
       </button>
       <button
         type="button"
-        css={css.arrowButton({ dir: 'right' })}
+        css={arrowButton({ dir: 'right' })}
         onClick={() => {
           const debouncedHandler = debounce<typeof handleSwipe>(
             handleSwipe,
