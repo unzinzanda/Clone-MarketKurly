@@ -1,10 +1,11 @@
 import React, { useCallback, useState } from 'react'
-import { ProductType } from '../../type/category.type'
+import { CartType, ProductType } from '../../type/category.type'
 import { css } from '@emotion/react'
 import Modal from '@mui/material/Modal'
 import { Box } from '@mui/material'
 import { formatPrice } from '../../utils/category/category.util'
 import { images } from '../../constants/images'
+import useCartStore from '../../store/cartStore'
 
 type Props = {
   item: ProductType
@@ -54,6 +55,33 @@ const AddProductModal = ({ item, closeModal, isOpen }: Props) => {
     },
     [productCnt],
   )
+
+  const insertToCart = useCartStore((state) => state.insertToCart)
+  const setQuantity = useCartStore((state) => state.setQuantity)
+  const products = useCartStore((state) => state.products)
+
+  const onClickAddButton = useCallback(() => {
+    const addedProduct: CartType = {
+      product: item,
+      quantity: productCnt,
+      checked: true,
+    }
+    if (products.length === 0) insertToCart(addedProduct)
+    else {
+      let newAdd = true
+      for (let i = 0; i < products.length; i++) {
+        if (products[i].product.id === item.id) {
+          newAdd = false
+          break
+        }
+      }
+
+      if (newAdd) insertToCart(addedProduct)
+      else setQuantity(item.id, productCnt)
+    }
+
+    closeModal()
+  }, [closeModal, setQuantity, insertToCart, productCnt, item])
 
   return (
     <Modal open={isOpen} onClose={closeModal}>
@@ -186,7 +214,10 @@ const AddProductModal = ({ item, closeModal, isOpen }: Props) => {
           <button css={buttonStyle({ bgColor: 'white' })} onClick={closeModal}>
             취소
           </button>
-          <button css={buttonStyle({ bgColor: '#5f0080' })}>
+          <button
+            css={buttonStyle({ bgColor: '#5f0080' })}
+            onClick={onClickAddButton}
+          >
             장바구니 담기
           </button>
         </div>

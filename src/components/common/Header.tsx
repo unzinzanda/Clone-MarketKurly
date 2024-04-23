@@ -5,8 +5,11 @@ import { ReactComponent as Logo } from '../../assets/images/logo.svg'
 import { Link } from 'react-router-dom'
 import Category from './Category'
 import { css } from '@emotion/react'
+import { Badge } from '@mui/material'
+import useCartStore from '../../store/cartStore'
 
 const Header = () => {
+  const products = useCartStore((state) => state.products)
   return (
     <>
       <header
@@ -51,9 +54,11 @@ const Header = () => {
               마켓컬리
             </p>
           </Link>
-          <button type="button">
-            <Cart />
-          </button>
+          <Link to="/cart">
+            <Badge badgeContent={products.length} color="secondary">
+              <Cart />
+            </Badge>
+          </Link>
         </div>
         <nav
           css={css`

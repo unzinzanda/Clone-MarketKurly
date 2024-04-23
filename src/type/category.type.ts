@@ -13,3 +13,9 @@ export type ProductType = {
   image: string
   kurlyOnly: boolean
 }
+
+export type CartType = {
+  product: ProductType
+  quantity: number
+  checked: boolean
+}
