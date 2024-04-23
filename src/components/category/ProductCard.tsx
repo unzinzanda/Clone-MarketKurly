@@ -19,10 +19,10 @@ const ProductCard = ({ item }: Props) => {
   const [isOpen, setIsOpen] = useState(false)
   const openModal = useCallback(() => {
     setIsOpen(true)
-  }, [isOpen])
+  }, [])
   const closeModal = useCallback(() => {
     setIsOpen(false)
-  }, [isOpen])
+  }, [])
 
   return (
     <Card sx={{ minHeight: 500 }} key={item.id}>
