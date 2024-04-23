@@ -2,6 +2,7 @@ import React from 'react'
 import { ReactComponent as Menu } from '../../assets/images/ic-menu.svg'
 import { Link } from 'react-router-dom'
 import { css } from '@emotion/react'
+import dummy from '../../db/Category.db.json'
 
 const Category = () => {
   return (
@@ -49,78 +50,36 @@ const Category = () => {
             }
           `}
         >
-          <li>
-            <Link
-              to="/"
-              css={css`
-                display: block;
-                width: 200px;
-                padding: 10px;
-                font-size: 14px;
+          {dummy.category.map((item) => (
+            <li key={item.id}>
+              <Link
+                to="/"
+                css={css`
+                  display: flex;
+                  align-items: center;
+                  width: 200px;
+                  padding: 10px;
+                  font-size: 14px;
 
-                :hover {
-                  background-color: #f5f5f5;
-                  color: #5f0080;
-                }
-              `}
-            >
-              채소
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/"
-              css={css`
-                display: block;
-                width: 200px;
-                padding: 10px;
-                font-size: 14px;
-
-                :hover {
-                  background-color: #f5f5f5;
-                  color: #5f0080;
-                }
-              `}
-            >
-              과일·견과·쌀
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/"
-              css={css`
-                display: block;
-                width: 200px;
-                padding: 10px;
-                font-size: 14px;
-
-                :hover {
-                  background-color: #f5f5f5;
-                  color: #5f0080;
-                }
-              `}
-            >
-              정육·가공육·계란
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/"
-              css={css`
-                display: block;
-                width: 200px;
-                padding: 10px;
-                font-size: 14px;
-
-                :hover {
-                  background-color: #f5f5f5;
-                  color: #5f0080;
-                }
-              `}
-            >
-              간편식·밀키트·샐러드
-            </Link>
-          </li>
+                  :hover {
+                    background-color: #f5f5f5;
+                    color: #5f0080;
+                  }
+                `}
+              >
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  css={css`
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 10px;
+                  `}
+                />
+                {item.name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </>

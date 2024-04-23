@@ -1,0 +1,24 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "name": "채소",
+      "image": "./assets/images/category/ic-vegetable.png"
+    },
+    {
+      "id": 2,
+      "name": "과일·견과·쌀",
+      "image": "./assets//images/category/ic-fruits.png"
+    },
+    {
+      "id": 3,
+      "name": "정육·가공육·계란",
+      "image": "./assets/images/category/ic-meat.png"
+    },
+    {
+      "id": 4,
+      "name": "간편식·밀키트·샐러드",
+      "image": "./assets/images/category/ic-salad.png"
+    }
+  ]
+}
