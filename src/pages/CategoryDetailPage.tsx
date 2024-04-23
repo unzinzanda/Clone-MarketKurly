@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import categoryDummy from '../db/Category.db.json'
 import productDummy from '../db/product.db.json'
-import { CategoryType } from '../type/category.tyle'
+import { CategoryType } from '../type/category.type'
 import ProductCard from '../components/category/ProductCard'
 
 const CategoryDetailPage = () => {

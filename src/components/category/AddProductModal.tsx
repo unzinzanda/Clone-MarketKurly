@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import { ProductType } from '../../type/category.tyle'
+import { ProductType } from '../../type/category.type'
 import { css } from '@emotion/react'
 import Modal from '@mui/material/Modal'
 import { Box } from '@mui/material'
