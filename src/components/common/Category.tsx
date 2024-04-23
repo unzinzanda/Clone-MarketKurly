@@ -53,7 +53,7 @@ const Category = () => {
           {dummy.category.map((item) => (
             <li key={item.id}>
               <Link
-                to="/"
+                to={`categories/${item.id}`}
                 css={css`
                   display: flex;
                   align-items: center;

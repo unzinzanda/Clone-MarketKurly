@@ -1,0 +1,84 @@
+{
+  "product": [
+    [
+      {
+        "id": "vegetable-1",
+        "delivery": "샛별배송",
+        "title": "제주 흙당근 1kg",
+        "description": "\"최대 혜택가: 4,550원\"",
+        "price": 6500,
+        "image": "/assets/images/product/carrot.jpg",
+        "kurlyOnly": false
+      },
+      {
+        "id": "vegetable-2",
+        "delivery": "샛별배송",
+        "title": "[KF365] 햇감자 1kg",
+        "description": "믿고 먹을 수 있는 상품을 합리적인 가격에, KF356",
+        "price": 6990,
+        "image": "/assets/images/product/potato.jpg",
+        "kurlyOnly": true
+      }
+    ],
+    [
+      {
+        "id": "fruits-1",
+        "delivery": "샛별배송",
+        "title": "당도선별 성주 참외 1.5kg (4~7입)",
+        "description": "뽀얀 과육에 담긴 시원한 단맛",
+        "price": 19990,
+        "image": "/assets/images/product/melon.jpeg",
+        "kurlyOnly": false
+      },
+      {
+        "id": "fruits-2",
+        "delivery": "샛별배송",
+        "title": "[KF365] 대추방울토마토 750g",
+        "description": "믿고 먹을 수 있는 상품을 합리적인 가격에, KF356",
+        "price": 8900,
+        "image": "/assets/images/product/tomato.jpg",
+        "kurlyOnly": true
+      }
+    ],
+    [
+      {
+        "id": "meat-1",
+        "delivery": "샛별배송",
+        "title": "[KF365] 양념 소불고기 1kg (냉장)",
+        "description": "행사 100g당 : 1,999원",
+        "price": 19990,
+        "image": "/assets/images/product/meat.jpg",
+        "kurlyOnly": true
+      },
+      {
+        "id": "meat-2",
+        "delivery": "샛별배송",
+        "title": "[Kurly's] 동물복지 유정란 20구",
+        "description": "전문가와 함께 꼼꼼하게 고른",
+        "price": 8541,
+        "image": "/assets/images/product/egg.jpg",
+        "kurlyOnly": true
+      }
+    ],
+    [
+      {
+        "id": "salad-1",
+        "delivery": "샛별배송",
+        "title": "[플랜티드] 슈퍼 연어 샐러드 ",
+        "description": "포슬포슬한 감자와 연어의 만남",
+        "price": 6715,
+        "image": "/assets/images/product/salmon.jpg",
+        "kurlyOnly": true
+      },
+      {
+        "id": "salad-2",
+        "delivery": "샛별배송",
+        "title": "방울방울 래디쉬 샐러드믹스 2종",
+        "description": "입맛을 깨우는 상큼함",
+        "price": 4990,
+        "image": "/assets/images/product/radish.jpg",
+        "kurlyOnly": false
+      }
+    ]
+  ]
+}

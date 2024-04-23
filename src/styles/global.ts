@@ -10,6 +10,7 @@ export const global = css`
   html,
   body {
     width: 100vw;
+    overflow-x: hidden;
   }
 
   ul {
